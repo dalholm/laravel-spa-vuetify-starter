@@ -31,6 +31,10 @@ A simple lightweight admin template based on laravel and vuetifyjs. Simple and c
 - `php artisan migrate`
 - `npm install` / `yarn`
 
+#### Composer
+- `composer create-project dalholm/laravel-vuetify-spa-admin && cd laravel-vuetify-spa-admin`
+- `npm install` / `yarn`
+
 ## Usage
 
 #### Development
