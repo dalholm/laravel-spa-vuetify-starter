@@ -34,5 +34,6 @@
   "choose_language": "Välj språk",
   "password_length_hint": "Måste vara minst 8 tecken",
   "nav_menu_title": "Kontrollcenter",
-  "close": "Stäng"
+  "close": "Stäng",
+  "account": "Mitt konto"
 }
