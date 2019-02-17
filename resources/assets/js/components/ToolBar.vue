@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar fixed app dark color="primary">
+  <v-toolbar fixed app dark clipped-left class="main-toolbar">
     <v-toolbar-side-icon @click.stop="toggleDrawer" v-if="authenticated"></v-toolbar-side-icon>
     <v-toolbar-title>
       <router-link :to="{ name: 'welcome' }" class="white--text">
@@ -10,9 +10,19 @@
 
     <!-- Authenticated -->
     <template v-if="authenticated">
-      <progress-bar :show="busy"></progress-bar>
-      <v-btn flat :to="{ name: 'settings.profile' }">{{ user.name }}</v-btn>
-      <v-btn flat @click.prevent="logout">{{ $t('logout') }}</v-btn>
+      <v-menu origin="center center" offset-y :nudge-bottom="10" transition="scale-transition">
+        <v-btn flat slot="activator"><v-icon left>person</v-icon>{{ user.name }}</v-btn>
+        <v-list class="pa-0">
+          <v-list-tile v-for="(item,index) in account_items" @click="accountMenuItemClicked(item.action)" ripple="ripple" :disabled="item.disabled" :target="item.target" rel="noopener" :key="index">
+            <v-list-tile-action v-if="item.icon">
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </v-list>
+      </v-menu>
     </template>
 
     <!-- Guest -->
@@ -25,6 +35,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import i18n from '~/plugins/vue-i18n'
 
 export default {
   props: {
@@ -36,7 +47,21 @@ export default {
 
   data: () => ({
     appName: window.config.appName,
-    busy: false
+    busy: false,
+    account_items: [
+      {
+        icon: 'account_circle',
+        href: '#',
+        title: i18n.t('account'),
+        action: 'profile'
+      },
+      {
+        icon: 'fullscreen_exit',
+        href: '#',
+        title: i18n.t('logout'),
+        action: 'logout'
+      }
+    ],
   }),
 
   computed: mapGetters({
@@ -61,7 +86,17 @@ export default {
 
       // Redirect to login.
       this.$router.push({ name: 'login' })
-    }
+    },
+    accountMenuItemClicked(action) {
+      switch (action) {
+        case 'profile':
+          this.$router.push({ name: 'settings.profile' })
+          break;
+        case 'logout':
+          this.logout();
+          break;
+      }
+    },
   }
 }
 </script>
