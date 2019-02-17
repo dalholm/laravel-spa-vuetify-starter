@@ -2,6 +2,10 @@
 
 A simple lightweight admin template based on laravel and vuetifyjs. Simple and clean
 
+## Screenshot
+<p align="center">
+<img src="https://i.imgur.com/HIaxKmn.png">
+</p>
 
 ## Features
 
