@@ -40,6 +40,6 @@
     "stylus-loader": "^3.0.2",
     "svg-sprite-loader": "^3.9.0",
     "vue-template-compiler": "^2.5.16",
-    "webpack-bundle-analyzer": "^2.13.1"
+    "webpack-bundle-analyzer": "^3.3.2"
   }
 }
