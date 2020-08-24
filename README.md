@@ -1,6 +1,9 @@
 <a href="https://packagist.org/packages/dalholm/laravel-vuetify-spa-admin"><img src="https://poser.pugx.org/dalholm/laravel-vuetify-spa-admin/d/total.svg" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/dalholm/laravel-vuetify-spa-admin"><img src="https://poser.pugx.org/dalholm/laravel-vuetify-spa-admin/v/stable.svg" alt="Latest Stable Version"></a>
 
+# Update
+Use [Laravel, sanctum, SPA](https://github.com/dalholm/larabue-simple-laravel-sanctum-spa-admin) repo instead!!
+
 # LVA Laravel Vuetifyjs Admin SPA 
 
 A simple lightweight admin template based on laravel and vuetifyjs. Simple and clean
