@@ -12,7 +12,7 @@
     "lint": "standard --plugin html resources/assets/js/**/* --fix"
   },
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.21.1",
     "js-cookie": "^2.2.0",
     "vee-validate": "^2.0.9",
     "vform": "^1.0.0",
