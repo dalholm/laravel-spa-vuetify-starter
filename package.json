@@ -33,7 +33,7 @@
     "eslint": "^3.19.0",
     "eslint-plugin-html": "^3.2.2",
     "eslint-plugin-vue-libs": "^1.2.1",
-    "laravel-mix": "^2.1",
+    "laravel-mix": "^6.0",
     "standard": "^10.0.3",
     "stylint": "^1.5.9",
     "stylus": "^0.54.5",
